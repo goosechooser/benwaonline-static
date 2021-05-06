@@ -4,3 +4,8 @@ title = "Benwa Online"
 
 [permalinks]
   top = "/:filename/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

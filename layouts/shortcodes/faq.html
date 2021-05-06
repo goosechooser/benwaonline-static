@@ -1,11 +1,13 @@
-look into reading from json file actually -> faq_entries.json
-<div class="faq">
 
+
+{{ range $.Site.Data.faq }}
 <div class='entry-wrapper'>
+{{ range .entries }}
     <div class='entry'>
-        <h2> what is benwa.online? </h2>
-        <p> its benwa <i>online</i> </p>
+        <h2> {{ .question | markdownify }} </h2>
+        <p> {{ .answer | markdownify }} </p>
     </div>
-</div>
+{{ end }}
 </div>
 
+{{ end }}
