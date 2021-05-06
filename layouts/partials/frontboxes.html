@@ -1,0 +1,28 @@
+{{/*  maybe make this programmatic? */}}
+{{ $post_count := "96"}}
+
+{{/*  frontbox1 - main stuff  */}}
+<div id='frontbox1' class="frontbox">
+    <h1>Benwa <i>Online</i></h1>
+    <div class='front-links'>
+        <a href="/gallery/">benwas</a>
+        <a href="/comments/">comments</a>
+        <a href="/tags/">tags</a>
+    </div>
+
+</div>
+
+{{/*  frontbox2 - post count  */}}
+<div id='frontbox2' class="frontbox">
+    <h2>{{ $post_count }}</h2>
+</div>
+
+{{/*  frontbox3 - footer  */}}
+<div id='frontbox3' class="frontbox">
+    <p>
+        {{ $post_count }} benwas <br>
+        <a href="/takedown/">takedown</a>
+        <a href="/contact/" class='mid'>contact</a>
+        <a href="/tos/">terms of service</a>
+    </p>
+</div>

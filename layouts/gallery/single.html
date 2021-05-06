@@ -1,0 +1,9 @@
+{{ define "main" }}
+    <div class="gallery-wrapper">
+        {{- partial "sidebar.html" . -}}
+        <div class="gallery">
+            {{ .Content }}
+            </div>
+    {{ .Content }}
+    </div>
+{{end}}

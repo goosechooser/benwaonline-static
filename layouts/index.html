@@ -1,0 +1,25 @@
+<!-- this is just the homepage -->
+<!DOCTYPE html>
+<html>
+{{/*  style sheet  */}}
+{{- partial "head.html" . -}}
+
+{{/*  the background image
+    look into making this better
+*/}}
+
+{{/*  
+<style>  
+.front {
+    background-image:url({{ url_for('static', filename='front.jpg') }});
+}
+</style>  
+*/}}
+<body>
+    <section id="content" class="front">
+    <div id="main">
+    {{- partial "frontboxes.html" . -}}
+    </div>
+    </section>
+</body>
+</html>
