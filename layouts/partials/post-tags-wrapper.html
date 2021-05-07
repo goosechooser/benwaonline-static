@@ -1,0 +1,11 @@
+<div class="post-tags-wrapper">
+    <h4>benwa tagged with</h4>
+    <div class="tags">
+        {{ range .Params.tags }}
+        <div class="tag">
+            <a href="" class="tag-link">{{ .name }}</a>
+            <span>{{ .count }}</span>
+        </div>
+        {{ end }}
+    </div>
+</div>

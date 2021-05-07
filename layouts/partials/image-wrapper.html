@@ -1,0 +1,6 @@
+{{$img_src := .Resources.GetMatch "img"}}
+
+<div class="image-wrapper">
+    <div class="like-wrapper"></div>
+    <img src="{{ $img_src.RelPermalink }}" alt="">
+</div>

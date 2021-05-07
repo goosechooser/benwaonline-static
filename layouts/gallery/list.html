@@ -1,12 +1,16 @@
 <!-- this is the base of all the pages -->
+{{/*  identify resources and pull them from page ig  */}}
 <!DOCTYPE html>
 <html>
 {{- partial "head.html" . -}}
 <body>
     {{- partial "navbar.html" . -}}
     <div id="content">
+        <div class="gallery-wrapper">
+        {{- partial "sidebar.html" . -}}
         {{- block "main" . }}
         {{- end }}
+        </div>
     </div>
     {{- partial "footer.html" . -}}
 </body>
