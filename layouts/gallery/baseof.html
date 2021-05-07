@@ -5,8 +5,11 @@
 <body>
     {{- partial "navbar.html" . -}}
     <div id="content">
+        <div class="gallery-wrapper">
+        {{- partial "sidebar.html" . -}}
         {{- block "main" . }}
-    {{- end }}
+        {{- end }}
+        </div>
     </div>
     {{- partial "footer.html" . -}}
 </body>
