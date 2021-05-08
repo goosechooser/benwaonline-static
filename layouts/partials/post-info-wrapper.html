@@ -1,5 +1,7 @@
+{{ $f := $.Site.Data.posts.test_post }}
+
 <div class="post-info-wrapper">
-    <h4> {{ .Title }}</h4>
-    <p>posted by <a href="/users/{{ .Params.userid }}">{{ .Params.postedby }}</a></p>
-    <p>{{ .Date }}</p>
+    <h4> {{ $f.title }}</h4>
+    <p>posted by <a href="/users/{{ $f.user_id }}">{{ $f.user }}</a></p>
+    <p>{{ $f.created_on }}</p>
 </div>

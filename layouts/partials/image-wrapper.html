@@ -1,6 +1,9 @@
-{{$img_src := .Resources.GetMatch "img"}}
+{{/*  grabbing exactly which post will be an issue?  */}}
+{{ $f := $.Site.Data.posts.test_post }}
+
+{{$img_src := $f.image.filepath }}
 
 <div class="image-wrapper">
     <div class="like-wrapper"></div>
-    <img src="{{ $img_src.RelPermalink }}" alt="">
+    <img src="{{ .Resources.GetMatch $img_src }}" alt="">
 </div>

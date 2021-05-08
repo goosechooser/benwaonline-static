@@ -1,10 +1,12 @@
+{{ $f := $.Site.Data.posts.test_post }}
+
 <div class="post-comments-wrapper">
     <h4>Here what others have to say about these loveableb enwas!</h4>
-    {{ range .Params.comments }}
+    {{ range $f.comments }}
     <div class="comment">
-        <a href="">USER NAME </a> - DATE
+        <a href="/users/{{.user_id}}">USER NAME </a> - {{ .created_on }}
         </div>
-        <p>comment go here</p>
+        <p>{{ .content }}</p>
     {{ end }}
     
 </div>
