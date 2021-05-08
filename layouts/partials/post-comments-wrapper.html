@@ -1,8 +1,9 @@
-{{ $f := $.Site.Data.posts.test_post }}
+{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
+{{ $data := getJSON "content" $resource }}
 
 <div class="post-comments-wrapper">
     <h4>Here what others have to say about these loveableb enwas!</h4>
-    {{ range $f.comments }}
+    {{ range $data.comments }}
     <div class="comment">
         <a href="/users/{{.user_id}}">USER NAME </a> - {{ .created_on }}
         </div>

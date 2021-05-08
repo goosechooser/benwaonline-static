@@ -1,7 +1,8 @@
-{{ $f := $.Site.Data.posts.test_post }}
+{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
+{{ $data := getJSON "content" $resource }}
 
 <div class="post-info-wrapper">
-    <h4> {{ $f.title }}</h4>
-    <p>posted by <a href="/users/{{ $f.user_id }}">{{ $f.user }}</a></p>
-    <p>{{ $f.created_on }}</p>
+    <h4> {{ $data.title }}</h4>
+    <p>posted by <a href="/users/{{ $data.user_id }}">{{ $data.user }}</a></p>
+    <p>{{ $data.created_on }}</p>
 </div>

@@ -1,7 +1,8 @@
-{{/*  grabbing exactly which post will be an issue?  */}}
-{{ $f := $.Site.Data.posts.test_post }}
+{{/*  requires a json dump of the post to be in the page bundle */}}
 
-{{$img_src := $f.image.filepath }}
+{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
+{{ $data := getJSON "content" $resource }}
+{{ $img_src := $data.image.filepath }}
 
 <div class="image-wrapper">
     <div class="like-wrapper"></div>

@@ -1,10 +1,10 @@
-{{ $f := $.Site.Data.posts.test_post }}
+{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
+{{ $data := getJSON "content" $resource }}
 
 <div class="post-tags-wrapper">
     <h4>benwa tagged with</h4>
     <div class="tags">
-        {{/*  reorder based on num_posts  */}}
-        {{ range $f.tags }}
+        {{ range sort $data.tags "num_posts" "desc" }}
         <div class="tag">
             <a href="/gallery/{{ .name }}" class="tag-link">{{ .name }}</a>
             <span>{{ .num_posts }}</span>
