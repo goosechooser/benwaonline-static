@@ -1,15 +1,12 @@
 
 <div class="faq">
-{{ range $.Site.Data.faq }}
 <div class='entry-wrapper'>
-{{ range .entries }}
+{{ range $.Site.Data.faq }}
     <div class='entry'>
         <h2> {{ .question | markdownify }} </h2>
         <p> {{ .answer | markdownify }} </p>
     </div>
 {{ end }}
 </div>
-
-{{ end }}
 </div>
 
