@@ -1,10 +1,9 @@
 {{/*  requires a json dump of the post to be in the page bundle */}}
-
 {{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
 {{ $data := getJSON "content" $resource }}
 {{ $img_src := $data.image.filepath }}
 
 <div class="image-wrapper">
     <div class="like-wrapper"></div>
-    <img src="{{ .Resources.GetMatch $img_src }}" alt="">
+    <img src="{{ (.Resources.GetMatch $img_src).RelPermalink }}" alt="">
 </div>
