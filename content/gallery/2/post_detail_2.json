@@ -1,0 +1,24 @@
+{
+    "title": "wa hunters",
+    "image": {
+        "filepath": "imgs/c27a2f278abe467093e8b54f3ecfb431.png"
+    },
+    "preview": {
+        "filepath": "thumbs/c27a2f278abe467093e8b54f3ecfb431.png"
+    },
+    "tags": [
+        {
+            "name": "benwa",
+            "num_posts": 96,
+            "id": 1,
+            "created_on": "18-Jan-2018"
+        }
+    ],
+    "id": 2,
+    "created_on": "18-Jan-2018",
+    "user": {
+        "username": "Elegant Benwa Rutabega",
+        "id": 2
+    },
+    "comments": []
+}

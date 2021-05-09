@@ -1,6 +1,6 @@
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
-    {{ range $.Site.Data.comments }}
+    {{ range (sort $.Site.Data.comments "id" "desc") }}
     <div class="comment-wrapper">
     {{ $img_src := .post.preview.filepath }}
     {{/*  {{ .Scratch.Set "img_src" .post.preview.filepath}}  */}}
