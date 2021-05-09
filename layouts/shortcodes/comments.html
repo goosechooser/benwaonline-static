@@ -4,11 +4,10 @@
     <div class="comment-wrapper">
     {{ $img_src := .post.preview.filepath }}
     {{/*  {{ .Scratch.Set "img_src" .post.preview.filepath}}  */}}
-    {{$img_src}}
         <div class="image">
             <a href="/gallery/{{.post.id}}">
             {{/*  {{ partial "get-img.html" . }}  */}}
-            <img src="{{ (.Resources.GetMatch $img_src).RelPermalink }}"></a>
+            <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
         </div>
         <div class="text">
             <p><a href="/users/{{.user.id}}/">{{.user.username}}</a> posted:</p> <p> {{.content}} </p>

@@ -11,7 +11,7 @@
         <div class="post">
         {{ $img_src := .preview.filepath }}
             <a href="/gallery/{{.id}}">
-                <img class="post-image" src="{{ (.Resources.GetMatch $img_src).RelPermalink }}" alt="{{ .title }}">
+                <img class="post-image" src="{{ (resources.GetMatch $img_src).RelPermalink }}" alt="{{ .title }}">
             </a>
         </div>
         {{end}}
