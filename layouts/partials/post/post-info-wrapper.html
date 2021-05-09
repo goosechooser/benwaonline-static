@@ -2,6 +2,6 @@
 
 <div class="post-info-wrapper">
     <h4> {{ $data.title }}</h4>
-    <p>posted by <a href="/users/{{ $data.user_id }}">{{ $data.user }}</a></p>
+    <p>posted by <a href="/users/{{ $data.user.id }}">{{ $data.user.username }}</a></p>
     <p>{{ $data.created_on }}</p>
 </div>

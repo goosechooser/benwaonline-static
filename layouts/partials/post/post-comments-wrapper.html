@@ -4,9 +4,8 @@
     <h4>Here what others have to say about these loveableb enwas!</h4>
     {{ range $data.comments }}
     <div class="comment">
-        <a href="/users/{{.user_id}}">USER NAME </a> - {{ .created_on }}
-        </div>
+        <a href="/users/{{.user.id}}">{{ .user.username }}</a> - {{ .created_on }}
         <p>{{ .content }}</p>
+    </div>
     {{ end }}
-    
 </div>
