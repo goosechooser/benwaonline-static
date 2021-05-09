@@ -1,0 +1,48 @@
+{{/*  {% macro display_users(users) %}
+    {% for user in users %}
+    <div class='user-row'>
+        <span><a href="{{ url_for('userinfo.show_user', user_id=user.id) }}">{{ user.username }}</a></span>
+        <span>{{ user.comments|length }}</span>
+        <span>{{ user.posts|length }}</span>
+        <span>no</span>
+    </div>
+    {% endfor %}
+{% endmacro %}
+
+
+{% extends "layout.html" %}
+{% block content %}
+<div class='users'>
+    <div class="users-header">
+        <span>Username</span>
+        <span>Comments</span>
+        <span>Posts</span>
+        <span>Benwa?</span>
+    </div>
+    <div class="users-entries">
+    {{ display_users(users) }}
+
+    </div>
+</div>
+
+{% endblock %}  */}}
+
+{{ define "main" }}
+<div class='users'>
+    <div class="users-header">
+        <span>Username</span>
+        <span>Comments</span>
+        <span>Posts</span>
+        <span>Benwa?</span>
+    </div>
+    <div class="users-entries">
+    {{ range $.Site.Data.users }}
+            <div class='user-row'>
+                <span><a href="/users/{{.id}}">{{ .username }}</a></span>
+                <span>{{ .num_comments }}</span>
+                <span>{{ .num_posts }}</span>
+                <span>no</span>
+            </div>
+    {{end}}
+        </div>
+{{ end }}

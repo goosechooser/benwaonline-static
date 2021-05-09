@@ -1,0 +1,23 @@
+{{ $data := partial "get-json.html" . }}
+{{ $posts := $data.posts}}
+
+<div class="user-wrapper">
+<p>Username: {{ $data.username }}</p>
+<p>Comments: <a href="">{{ $data.num_comments}}</a></p>
+<p>Benwa?: probably not </p>
+<p>Recent Posts: <a href="/users/{{$data.id}}/posts/">All - {{ (len $posts) }}</a></p>
+    <div class='contains-images'>
+        {{range first 3 (sort $posts "id" "desc")}}
+        <div class="post">
+        {{ $img_src := .preview.filepath }}
+            <a href="/gallery/{{.id}}">
+                <img class="post-image" src="{{ (.Resources.GetMatch $img_src).RelPermalink }}" alt="{{ .title }}">
+            </a>
+        </div>
+        {{end}}
+    </div>
+    <p>Recently they LOVE these benwa: <a href="">All - figure it out later</a></p>
+    <div class='contains-images'>
+        placeholder
+    </div>
+</div>

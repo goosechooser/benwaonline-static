@@ -2,8 +2,8 @@
     {{/*  figure out sorting later  */}}
     {{ range .Pages }}
     <div class="post">
-        {{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
-        {{ $data := getJSON "content" $resource }}
+        {{ $data := partial "get-json.html" . }}
+
         {{ $img_src := $data.preview.filepath }}
 
         <a href="/gallery/{{$data.id}}">

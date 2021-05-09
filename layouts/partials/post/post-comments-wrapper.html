@@ -1,5 +1,4 @@
-{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
-{{ $data := getJSON "content" $resource }}
+{{ $data := partial "get-json.html" . }}
 
 <div class="post-comments-wrapper">
     <h4>Here what others have to say about these loveableb enwas!</h4>

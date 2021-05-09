@@ -1,0 +1,3 @@
+{{ $resource := (.Resources.GetMatch "*.json").RelPermalink }}
+{{ $data := getJSON "content" $resource }}
+{{ return $data }}
