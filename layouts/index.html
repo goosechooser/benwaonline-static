@@ -4,20 +4,21 @@
 {{/*  style sheet  */}}
 {{- partial "head.html" . -}}
 
-{{/*  the background image
-    look into making this better
-*/}}
 
-{{/*  
 <style>  
-.front {
-    background-image:url({{ url_for('static', filename='front.jpg') }});
-}
-</style>  
-*/}}
+    .front {
+        background-image:url({{ (resources.GetMatch "front.jpg").RelPermalink }});
+    }
+    </style>  
+
+
 <body>
-    <div id="main" class="front">
-    {{- partial "frontboxes.html" . -}}
-    </div>
+    <section id="content">
+        
+            <div id="main" class="front">
+                {{- partial "frontboxes.html" . -}}
+                </div>
+    </section>
+    
 </body>
 </html>
