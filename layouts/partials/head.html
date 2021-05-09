@@ -1,5 +1,5 @@
 <head>
-    <title>{{ .Title }}</title>
+    <title>{{ .Title }} - Benwa Online</title>
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>

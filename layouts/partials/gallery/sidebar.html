@@ -6,7 +6,7 @@
         <div class="tag-menu-content" id='tag-menu' aria-expanded="false" data-hook='tag-menu-content'>
             {{range first 30 (sort $.Site.Data.tags "num_posts" "desc" )}}
                 <div class='tag'>
-                    <a href="/tags/{{.name}}" class="tag-link">{{ .name }}</a>
+                    <a href="/tags/{{(replace .name " " "-" ) }}" class="tag-link">{{ .name }}</a>
                     <span>{{ .num_posts }}</span>
                 </div>
             {{end}}

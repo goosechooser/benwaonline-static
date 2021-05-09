@@ -1,1 +1,3 @@
-<img src="{{ (.Resources.GetMatch (.Scratch.Get "img_src") ).RelPermalink }}" alt="">
+{{ with resources.GetMatch (.Scratch.Get "img_src") }}
+<img src="{{ (.).RelPermalink }}" alt="">
+{{ end }}

@@ -4,11 +4,10 @@
         <div class="name">name</div>
         <div class="posts">posts</div>
         {{ range (sort $.Site.Data.tags "num_posts" "desc") }}
-        <div class="name"><a href="/tags/{{.name}}">{{ .name }}</a></div>
+        <div class="name"><a href="/tags/{{(replace .name " " "-" ) }}">{{ .name }}</a></div>
         <div class="posts">{{ .num_posts }}</div>
         {{ end }}
     </div>
 </div>
 {{end}}
-
 

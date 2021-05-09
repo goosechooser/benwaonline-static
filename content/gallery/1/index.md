@@ -1,6 +1,6 @@
 ---
-date: 2020-09-14T00:15:00-07:00
-draft: false
-title: 1
-tags: ['benwa', 'knees']
+title: and gog said "let there be benwa." and there was benwa
+tags: ['blessed', 'benwa']
+id: 1
 ---
+    

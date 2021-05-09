@@ -5,7 +5,7 @@
     <div class="tags">
         {{ range sort $data.tags "num_posts" "desc" }}
         <div class="tag">
-            <a href="/tags/{{ .name }}" class="tag-link">{{ .name }}</a>
+            <a href="/tags/{{(replace .name " " "-" ) }}" class="tag-link">{{ .name }}</a>
             <span>{{ .num_posts }}</span>
         </div>
         {{ end }}
