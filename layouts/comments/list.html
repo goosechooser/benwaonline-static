@@ -1,0 +1,41 @@
+<!-- old view it works its great -->
+{{/*
+<div class="comments-wrapper">
+    <h2 class="comment-wrapper">comments recently posted</h2>
+    {{ range (sort $.Site.Data.comments "id" "desc") }}
+    <div class="comment-wrapper">
+    {{ $img_src := .post.preview.filepath }}
+        <div class="image">
+            <a href="/gallery/{{.post.id}}">
+            <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
+        </div>
+        <div class="text">
+            <p><a href="/users/{{.user.id}}/">{{.user.username}}</a> posted:</p> <p> {{.content}} </p>
+        </div>
+    </div>
+    {{end}}
+</div>
+{{end}}
+*/}}
+
+{{ define "main" }}
+<div class="comments-wrapper">
+    <h2 class="comment-wrapper">comments recently posted</h2>
+    {{/* {{ range (sort $.Site.Data.comments "id" "desc") }} */}}
+    help
+    {{.Content}}
+    {{range .Pages}}
+    {{.}}
+    <div class="comment-wrapper">
+    {{ $img_src := .Params.post.preview.filepath }}
+        <div class="image">
+            <a href="/gallery/{{.Params.post.id}}">
+            {{/* <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a> */}}
+        </div>
+        <div class="text">
+            <p><a href="/users/{{.Params.user.id}}/">{{.Params.user.username}}</a> posted:</p> <p> {{.Params.content}} </p>
+        </div>
+    </div>
+    {{end}}
+</div>
+{{end}}
