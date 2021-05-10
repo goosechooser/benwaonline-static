@@ -3,7 +3,7 @@
 
 <div class="user-wrapper">
 <p>Username: {{ $data.username }}</p>
-<p>Comments: <a href="">{{ $data.num_comments}}</a></p>
+<p>Comments: <a href="/users/{{$data.id}}/comments/">{{ $data.num_comments}}</a></p>
 <p>Benwa?: probably not </p>
 <p>Recent Posts: <a href="/users/{{$data.id}}/posts/">All - {{ (len $posts) }}</a></p>
     <div class='contains-images'>
