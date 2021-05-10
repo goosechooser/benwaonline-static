@@ -2,6 +2,12 @@ baseURL = "https://romantic-hodgkin-e6944c.netlify.app/"
 languageCode = "en-us"
 title = "Benwa Online"
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  comment = "comments"
+
 [permalinks]
   top = "/:filename/"
 
