@@ -1,4 +1,6 @@
-{{ $data := partial "get-json.html" . }}
+{{/* {{ $data := partial "get-json.html" . }} */}}
+
+{{ $data := .Params}}
 {{ $posts := $data.posts}}
 
 <div class="user-wrapper">
