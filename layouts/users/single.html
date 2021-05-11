@@ -1,8 +1,13 @@
 
 {{ define "main" }}
-{{/* 
-<div class="userstats">
-{{- partial "users/detail.html" . -}}
-</div>
-*/}}
+ok in users single
+posting the html for comment
+so then need to figure out if we're looking at comments, posts, or likes
+{{ with .Params.comments }}
+{{ partial "users/single-user-comments" . }}
+{{ end }}
+
+{{ with .Params.posts }}
+    
+{{ end }}
 {{end}}
