@@ -2,7 +2,7 @@
 
 {{ $data := .Params}}
 {{ $posts := $data.posts}}
-
+<div class="userstats">
 <div class="user-wrapper">
 <p>Username: {{ $data.username }}</p>
 <p>Comments: <a href="/users/{{$data.id}}/comments/">{{ $data.num_comments}}</a></p>
@@ -22,4 +22,5 @@
     <div class='contains-images'>
         placeholder
     </div>
+</div>
 </div>

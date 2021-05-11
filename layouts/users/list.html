@@ -6,22 +6,11 @@ maybe i just make peace with the devil and
 flip this to a different layout if we're in deep?
 */}}
 {{ define "main" }}
-where
-<div class='users'>
-    <div class="users-header">
-        <span>Username</span>
-        <span>Comments</span>
-        <span>Posts</span>
-        <span>Benwa?</span>
-    </div>
-    <div class="users-entries">
-    {{ range $.Site.Data.users }}
-            <div class='user-row'>
-                <span><a href="/users/{{.id}}">{{ .username }}</a></span>
-                <span>{{ .num_comments }}</span>
-                <span>{{ .num_posts }}</span>
-                <span>no</span>
-            </div>
-    {{end}}
-        </div>
+<!-- if Param exists then its a _index.md -->
+{{ if .Params}}
+{{ partial "users/detail.html" . }}
+{{ else }}
+{{ partial "users/userlist-view.html" . }}
+{{ end }}
+
 {{ end }}

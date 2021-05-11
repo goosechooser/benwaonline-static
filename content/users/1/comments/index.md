@@ -1,4 +1,0 @@
----
-type: usercomments 
----
-www
