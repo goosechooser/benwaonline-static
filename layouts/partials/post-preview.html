@@ -1,6 +1,10 @@
-{{ $post := .}}
-{{ $img_src := $post.preview.filepath }}
-<div class="image">
-    <a href="/gallery/{{$post.id}}">
-    <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
+{{ $img_src := .post.preview.filepath }}
+<div class="comment-wrapper">
+    <div class="image">
+        <a href="/gallery/{{.id}}">
+        <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
+    </div>
+    <div class="text">
+        <p><a href="/users/{{.user.id}}/">{{.user.username}}</a> posted:</p> <p> {{.content}} </p>
+    </div>
 </div>

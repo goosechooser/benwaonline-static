@@ -1,12 +1,6 @@
-
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
     {{range sort .Params.comments "id" "desc" }} 
-    <div class="comment-wrapper">
-        {{ partial "post-preview.html" .post }}
-        <div class="text">
-            <p><a href="/users/{{.user.id}}/">{{.user.username}}</a> posted:</p> <p> {{.content}} </p>
-        </div>
-    </div>
+        {{ partial "post-preview.html" . }}
     {{end}}
 </div>

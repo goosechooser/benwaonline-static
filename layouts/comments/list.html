@@ -1,14 +1,9 @@
 {{ define "main" }}
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
-    {{/* {{ range (sort $.Site.Data.comments "id" "desc") }} */}}
     {{range (sort .Pages ".Title" "desc") }}
-    <div class="comment-wrapper">
-        {{ partial "post-preview.html" .Params.post }}
-        <div class="text">
-            <p><a href="/users/{{.Params.user.id}}/">{{.Params.user.username}}</a> posted:</p> <p> {{.Content}} </p>
-        </div>
-    </div>
+        {{ $params := merge .Params (dict "content" .Content)}}
+        {{ partial "post-preview.html" $params }}
     {{end}}
 </div>
 {{end}}
