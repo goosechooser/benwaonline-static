@@ -4,11 +4,7 @@
     {{/* {{ range (sort $.Site.Data.comments "id" "desc") }} */}}
     {{range (sort .Pages ".Title" "desc") }}
     <div class="comment-wrapper">
-    {{ $img_src := .Params.post.preview.filepath }}
-        <div class="image">
-            <a href="/gallery/{{.Params.post.id}}">
-            <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
-        </div>
+        {{ partial "post-preview.html" .Params.post }}
         <div class="text">
             <p><a href="/users/{{.Params.user.id}}/">{{.Params.user.username}}</a> posted:</p> <p> {{.Content}} </p>
         </div>

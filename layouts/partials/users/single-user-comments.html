@@ -1,13 +1,9 @@
 
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
-    {{range sort . "id" "desc" }} 
+    {{range sort .Params.comments "id" "desc" }} 
     <div class="comment-wrapper">
-    {{ $img_src := .post.preview.filepath }}
-        <div class="image">
-            <a href="/gallery/{{.post.id}}">
-            <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
-        </div>
+        {{ partial "post-preview.html" .post }}
         <div class="text">
             <p><a href="/users/{{.user.id}}/">{{.user.username}}</a> posted:</p> <p> {{.content}} </p>
         </div>

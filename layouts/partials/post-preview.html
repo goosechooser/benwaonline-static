@@ -1,0 +1,6 @@
+{{ $post := .}}
+{{ $img_src := $post.preview.filepath }}
+<div class="image">
+    <a href="/gallery/{{$post.id}}">
+    <img src="{{ (resources.GetMatch $img_src).RelPermalink }}"></a>
+</div>
