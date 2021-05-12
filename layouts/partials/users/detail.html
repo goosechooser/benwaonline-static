@@ -9,7 +9,8 @@
 <p>Username: {{ $data.username }}</p>
 <p>Comments: <a href="/users/{{$data.id}}/comments/">{{ $data.num_comments}}</a></p>
 <p>Benwa?: probably not </p>
-<p>Recent Posts: <a href="/users/{{$data.id}}/posts/">All - {{ (len $posts) }}</a></p>
+{{ if $posts }}
+    <p>Recent Posts: <a href="/users/{{$data.id}}/posts/">All - {{ (len $posts) }}</a></p>
     <div class='contains-images'>
         {{range first 3 (sort $posts "id" "desc")}}
         <div class="post">
@@ -20,8 +21,12 @@
         </div>
         {{end}}
     </div>
-    
-<p>Recently they LOVE these benwa: <a href="/users/{{$data.id}}/likes/">All - {{ (len $likes) }}</a></p>
+{{ else }}
+    <p>Recent Posts: <a href="/users/{{$data.id}}/posts/">All - 0</a></p>
+{{ end }}
+
+{{ if $likes }}
+    <p>Recently they LOVE these benwa: <a href="/users/{{$data.id}}/likes/">All - {{ (len $likes) }}</a></p>
     <div class='contains-images'>
     {{ range first 3 ($likes)  }}
         <div class="post">
@@ -31,7 +36,9 @@
                 </a>
     </div>
     {{ end }}
-</div>
-
+    </div>
+{{ else }}
+<p>Recently they LOVE these benwa: <a href="/users/{{$data.id}}/likes/">All - 0</a></p>
+{{ end }}
 </div>
 </div>

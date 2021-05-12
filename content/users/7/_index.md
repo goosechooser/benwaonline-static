@@ -1,0 +1,4 @@
+---
+{'username': 'Cosmic Benwa Rutabega', 'id': 7, 'num_comments': 1, 'posts': [{'preview': {'filepath': 'thumbs/eee5d7aa1d5b481bbfc6097fdc7a9c97.png'}, 'id': 6}, {'preview': {'filepath': 'thumbs/77789fd6f86d4fa1a1be1d09156d847a.gif'}, 'id': 48}, {'preview': {'filepath': 'thumbs/7fddae74273f4c63a642aeefc9580a7c.png'}, 'id': 49}, {'preview': {'filepath': 'thumbs/8db1bffdb8bb4f8eaf67d63034216ef2.jpg'}, 'id': 50}], 'likes': [], 'comments': [{'content': 'unforgettable scene!!!', 'id': 5, 'post': {'preview': {'filepath': 'thumbs/7f7ef5577b6b4fcd80eac0725b9a6bff.png'}, 'id': 51}, 'user': {'username': 'Cosmic Benwa Rutabega', 'id': 7}}]}
+---
+    
