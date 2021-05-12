@@ -9,16 +9,12 @@
          -->
             <h3>tags</h3>
             <div class="tag-menu-content" id='tag-menu' aria-expanded="false" data-hook='tag-menu-content'>
-                {{$tag_data := $.Site.Data.tags }}
-                {{ . }}
-    {{/* 
-                {{range first 30 (sort  "num_posts" "desc" )}}
+                {{range ( sort .Params.tags "num_posts" "desc" )}}
                     <div class='tag'>
                         <a href="/tags/{{(replace .name " " "-" ) }}" class="tag-link">{{ .name }}</a>
                         <span>{{ .num_posts }}</span>
                     </div>
                 {{end}}
-    */}}
             </div>
         </div>
     </div>

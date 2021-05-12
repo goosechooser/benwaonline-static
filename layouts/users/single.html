@@ -13,8 +13,8 @@ wow im posts
 {{ partial "users/single-user-posts" . }}
 {{ end }}
 
-{{ with .Params.likes }}
-wow im likes
+{{ if .Params.likes }}
+{{ partial "users/single-user-posts" . }}
 {{ end }}
 
 {{end}}

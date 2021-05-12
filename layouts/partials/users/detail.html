@@ -2,6 +2,8 @@
 
 {{ $data := .Params}}
 {{ $posts := $data.posts}}
+{{ $likes := $data.likes}}
+
 <div class="userstats">
 <div class="user-wrapper">
 <p>Username: {{ $data.username }}</p>
@@ -18,9 +20,18 @@
         </div>
         {{end}}
     </div>
-    <p>Recently they LOVE these benwa: <a href="">All - figure it out later</a></p>
+    
+<p>Recently they LOVE these benwa: <a href="/users/{{$data.id}}/likes/">All - {{ (len $likes) }}</a></p>
     <div class='contains-images'>
-        placeholder
+    {{ range first 3 (sort $likes "id" "desc")  }}
+        <div class="post">
+            {{ $img_src := .preview.filepath }}
+                <a href="/gallery/{{.id}}">
+                    <img class="post-image" src="{{ (resources.GetMatch $img_src).RelPermalink }}" alt="{{ .title }}">
+                </a>
     </div>
+    {{ end }}
+</div>
+
 </div>
 </div>
