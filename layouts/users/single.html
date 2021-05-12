@@ -1,15 +1,10 @@
 
 {{ define "main" }}
-ok in users single
-posting the html for comment
-so then need to figure out if we're looking at comments, posts, or likes
 {{ if .Params.comments }}
 {{ partial "users/single-user-comments" . }}
 {{ end }}
 
-so if we pass in using 
 {{ if .Params.posts }}
-wow im posts
 {{ partial "users/single-user-posts" . }}
 {{ end }}
 

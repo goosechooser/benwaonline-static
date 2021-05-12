@@ -23,7 +23,7 @@
     
 <p>Recently they LOVE these benwa: <a href="/users/{{$data.id}}/likes/">All - {{ (len $likes) }}</a></p>
     <div class='contains-images'>
-    {{ range first 3 (sort $likes "id" "desc")  }}
+    {{ range first 3 ($likes)  }}
         <div class="post">
             {{ $img_src := .preview.filepath }}
                 <a href="/gallery/{{.id}}">
