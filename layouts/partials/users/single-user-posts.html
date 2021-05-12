@@ -1,0 +1,42 @@
+<div class="gallery-wrapper">
+    pass shit into here
+    {{/* 
+    {{- partial "gallery/sidebar.html" . -}}
+    */}}
+    <div class='sidebar-wrapper'>
+        <div class="tag-menu-wrapper">
+        <!-- <button class="menu-button" id='sidebar-menu-button' data-hook='side-menu-toggle'>tags</button>
+         -->
+            <h3>tags</h3>
+            <div class="tag-menu-content" id='tag-menu' aria-expanded="false" data-hook='tag-menu-content'>
+                {{$tag_data := $.Site.Data.tags }}
+                {{ . }}
+    {{/* 
+                {{range first 30 (sort  "num_posts" "desc" )}}
+                    <div class='tag'>
+                        <a href="/tags/{{(replace .name " " "-" ) }}" class="tag-link">{{ .name }}</a>
+                        <span>{{ .num_posts }}</span>
+                    </div>
+                {{end}}
+    */}}
+            </div>
+        </div>
+    </div>
+
+    {{/* 
+    {{- partial "gallery/display.html" . -}}
+    */}}
+    <div class="gallery">
+        {{ range ( sort .Params.posts "id" "desc" )}}
+        <div class="post">
+            {{ $img_src := .preview.filepath }}
+            <a href="/gallery/{{.id}}">
+            {{ with resources.GetMatch $img_src }}
+            <img class="post-image" src="{{ (.).RelPermalink }}" alt="">
+            {{ end }}
+            </a>
+        </div>
+        {{ end }}
+    </div>
+
+    </div>
