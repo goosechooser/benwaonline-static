@@ -23,19 +23,9 @@
         </div>
     </div>
 
-    {{/* 
-    {{- partial "gallery/display.html" . -}}
-    */}}
     <div class="gallery">
         {{ range ( sort .Params.posts "id" "desc" )}}
-        <div class="post">
-            {{ $img_src := .preview.filepath }}
-            <a href="/gallery/{{.id}}">
-            {{ with resources.GetMatch $img_src }}
-            <img class="post-image" src="{{ (.).RelPermalink }}" alt="">
-            {{ end }}
-            </a>
-        </div>
+            {{ partial "gallery-preview.html" . }}
         {{ end }}
     </div>
 

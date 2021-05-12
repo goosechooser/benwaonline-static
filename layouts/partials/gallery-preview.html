@@ -1,0 +1,9 @@
+{{$data := . }}
+<div class="post">
+    {{ $img_src := $data.preview.filepath }}
+    <a href="/gallery/{{$data.id}}">
+    {{ with resources.GetMatch $img_src }}
+    <img class="post-image" src="{{ (.).RelPermalink }}" alt="{{ $data.title }}">
+    {{ end }}
+    </a>
+</div>
