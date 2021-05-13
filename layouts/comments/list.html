@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
-    {{range (sort .Pages ".Title" "desc") }}
+    {{range (sort .RegularPagesRecursive ".Title" "desc") }}
         {{ $params := merge .Params (dict "content" .Content)}}
         {{ partial "post-preview.html" $params }}
     {{end}}
