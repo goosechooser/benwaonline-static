@@ -1,6 +1,5 @@
 <div class='sidebar-wrapper'>
     <div class="tag-menu-wrapper">
-    <button class="menu-button" id='sidebar-menu-button' data-hook='side-menu-toggle'>tags</button>
         <h3>tags</h3>
         <div class="tag-menu-content" id='tag-menu' aria-expanded="false" data-hook='tag-menu-content'>
             {{range first 30 (sort $.Site.Data.tags "num_posts" "desc" )}}
