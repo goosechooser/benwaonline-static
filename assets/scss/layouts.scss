@@ -58,7 +58,9 @@
 }
 
 @mixin text-block-inner {
-    max-width: 900px;
+    // change this to make front box widths larger
+    // ALONG WITH EVERYTHING ELSE
+    max-width: 700px;
     width: 100%;
 }
 
