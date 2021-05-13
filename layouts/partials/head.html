@@ -1,6 +1,9 @@
 <head>
     <title>{{ .Title }} - Benwa Online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+
 </head>

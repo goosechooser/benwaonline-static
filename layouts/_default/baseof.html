@@ -8,6 +8,10 @@
         {{- block "main" . }}
     {{- end }}
     </div>
+    {{ $jquery := resources.Get "jquery.min.js" }}
+    <script src="{{ $jquery.Permalink }}"></script>
+    {{ $js := resources.Get "scripts.js" }}
+    <script src="{{ $js.Permalink }}"></script>
     {{- partial "footer.html" . -}}
 </body>
 
