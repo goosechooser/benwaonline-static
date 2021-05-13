@@ -1,6 +1,7 @@
 <div class="comments-wrapper">
     <h2 class="comment-wrapper">comments recently posted</h2>
     {{range sort .Params.comments "id" "desc" }} 
-        {{ partial "post-preview.html" . }}
+        {{$parms := (dict "id" .post.id "post" .post "user" .user "content" .content) }}
+        {{ partial "post-preview.html" $parms }}
     {{end}}
 </div>
