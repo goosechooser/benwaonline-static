@@ -87,6 +87,8 @@
 .logo {
     position: static;
     padding: 0 10px;
+    margin: 0 auto;
+    transform: translateX(-30px);
 
     @include for-tablet-portrait-up {
         order: 0;

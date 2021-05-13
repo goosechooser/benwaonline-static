@@ -140,7 +140,9 @@ p {
       border: none; } }
 .logo {
   position: static;
-  padding: 0 10px; }
+  padding: 0 10px;
+  margin: 0 auto;
+  transform: translateX(-30px); }
   @media (min-width: 600px) {
     .logo {
       order: 0; } }
