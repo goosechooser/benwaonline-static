@@ -141,14 +141,14 @@ p {
 .logo {
   position: static;
   padding: 0 10px;
-  margin: 0 auto;
-  transform: translateX(-30px); }
+  margin: 0 auto; }
   @media (min-width: 600px) {
     .logo {
       order: 0; } }
 .logo-image {
   width: 20px;
-  height: 20px; }
+  height: 20px;
+  transform: translateX(-30px); }
   @media (min-width: 600px) {
     .logo-image {
       display: none; } }
