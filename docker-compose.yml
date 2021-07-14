@@ -8,15 +8,15 @@ services:
     #         - "80:80"
     #         - "443:443"
     #     restart: always 
-        # volumes:
-        #     - ./benwaonline/static:/www/benwa.online/static
-        #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-        #     - ./nginx/conf.d:/etc/nginx/conf.d
-        #     - ./nginx/vhost.d:/etc/nginx/vhost.d
-        #     - ./nginx/html:/usr/share/nginx/html
-        #     - ./nginx/logs:/var/log/nginx
-        #     - certs:/etc/nginx/certs
-        #     - ./nginx/cache:/var/cache/nginx:rw
+    # volumes:
+    #     - ./benwaonline/static:/www/benwa.online/static
+    #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    #     - ./nginx/conf.d:/etc/nginx/conf.d
+    #     - ./nginx/vhost.d:/etc/nginx/vhost.d
+    #     - ./nginx/html:/usr/share/nginx/html
+    #     - ./nginx/logs:/var/log/nginx
+    #     - certs:/etc/nginx/certs
+    #     - ./nginx/cache:/var/cache/nginx:rw
         #     - ./nginx/ngx_pagespeed:/var/cache/ngx_pagespeed:rw
     #     environment:
     #         - FRONT_HOST=https://benwa.online
@@ -26,8 +26,8 @@ services:
     #         com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
 
     nginx:
-        image: nginx:ryanhs/spa-alpine
-        container_name: : nginx
+        image: nginx:alpine
+        container_name: nginx
         ports:
             - "80:80"
             - "443:443"
