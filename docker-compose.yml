@@ -70,6 +70,7 @@ services:
         # command will change
         command: hugo --gc --minify
         volumes:
+            - ".:/src"
             - ./benwaonline/static:/src/public
 
 volumes:
