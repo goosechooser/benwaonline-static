@@ -18,6 +18,10 @@ services:
             - certs:/etc/nginx/certs
             - ./nginx/cache:/var/cache/nginx:rw
             - ./nginx/ngx_pagespeed:/var/cache/ngx_pagespeed:rw
+        environment:
+            - FRONT_HOST=https://benwa.online
+            - VIRTUAL_HOST=benwa.online
+            - LETSENCRYPT_HOST=benwa.online
         labels:
             com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
 
@@ -59,16 +63,12 @@ services:
         image: klakegg/hugo:0.83.1-ext-alpine
         # entrypoint: hugo-official
         container_name: benwaonline
-        # restart: unless-stopped 
-        # expose:
-        #     - "443"
-        #     - "80"
-        environment:
-            - FRONT_HOST=https://benwa.online
-            - VIRTUAL_HOST=benwa.online
-            - LETSENCRYPT_HOST=benwa.online
+        # environment:
+        #     - FRONT_HOST=https://benwa.online
+        #     - VIRTUAL_HOST=benwa.online
+        #     - LETSENCRYPT_HOST=benwa.online
         # command will change
-        # command: hugo --gc --minify
+        # command: server
         volumes:
             - ".:/src"
             - ./benwaonline/static:/src/public
