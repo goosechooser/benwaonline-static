@@ -57,7 +57,7 @@ services:
         #     - nginx-ssl
         # image will change to something else
         image: klakegg/hugo:0.83.1-ext-alpine
-        # container_name: benwaonline
+        container_name: benwaonline
         # restart: unless-stopped 
         # expose:
         #     - "443"
@@ -67,8 +67,7 @@ services:
             - VIRTUAL_HOST=benwa.online
             - LETSENCRYPT_HOST=benwa.online
         # command will change
-        command: hugo --gc --minify
-        # 2nd part of static path will change
+        # command: hugo --gc --minify
         volumes:
             - ./benwaonline/static:/src/public
 
