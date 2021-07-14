@@ -1,5 +1,5 @@
 version: '3'
-
+# probably dont even need pagespeed now that I think about it
 services:
     nginx:
         image: goosechooser/benwaonline-nginx-pagespeed
@@ -33,7 +33,7 @@ services:
             - ./nginx/html:/usr/share/nginx/html
             - ./nginx/logs:/var/log/nginx
             - certs:/etc/nginx/certs:ro
-            - /tmp/templates:/etc/docker-gen/templates/nginx.tmpl
+            - /tmp/templates:/etc/docker-gen/templates
         labels:
             com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen: "true"
 
