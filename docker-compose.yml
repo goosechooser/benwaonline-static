@@ -67,7 +67,7 @@ services:
             - VIRTUAL_HOST=benwa.online
             - LETSENCRYPT_HOST=benwa.online
         # command will change
-        # command: /usr/local/bin/gunicorn -w 3 -b :80 run:app --log-level DEBUG 
+        command: hugo --gc --minify
         # 2nd part of static path will change
         volumes:
             - ./benwaonline/static:/src/public
