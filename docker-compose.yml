@@ -102,6 +102,7 @@ services:
 
 volumes:
     certs:
+    acme:
 
 networks:
     default:
