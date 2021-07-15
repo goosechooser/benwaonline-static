@@ -16,9 +16,10 @@ services:
             - html:/usr/share/nginx/html
             - ./nginx/logs:/var/log/nginx
             - certs:/etc/nginx/certs
-        # environment:
-        #     - VIRTUAL_HOST=benwa.online
-        #     - LETSENCRYPT_HOST=benwa.online
+        environment:
+            - FRONT_HOST=https://benwa.online
+            - VIRTUAL_HOST=benwa.online
+            - LETSENCRYPT_HOST=benwa.online
 
     nginx-gen:
         image: nginxproxy/docker-gen
@@ -41,7 +42,7 @@ services:
         container_name: nginx-ssl
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
-            - ./nginx/conf.d:/etc/nginx/conf.d
+            - conf:/etc/nginx/conf.d
             - vhost:/etc/nginx/vhost.d
             - html:/usr/share/nginx/html
             - ./nginx/logs:/var/log/nginx
@@ -73,14 +74,14 @@ services:
         image: klakegg/hugo:0.83.1-ext-alpine
         # entrypoint: hugo-official
         container_name: benwaonline
-        environment:
-            - FRONT_HOST=https://benwa.online
-            - VIRTUAL_HOST=benwa.online
-            - LETSENCRYPT_HOST=benwa.online
+        # environment:
+        #     - FRONT_HOST=https://benwa.online
+        #     - VIRTUAL_HOST=benwa.online
+        #     - LETSENCRYPT_HOST=benwa.online
         # command will change
-        command: server
-        expose:
-            - "1313"
+        # command: server
+        # expose:
+        #     - "1313"
         volumes:
             - ".:/src"
             - ./benwaonline/static:/src/public
