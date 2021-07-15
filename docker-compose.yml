@@ -17,6 +17,7 @@ services:
             - ./nginx/logs:/var/log/nginx
             - certs:/etc/nginx/certs
         environment:
+            - LETSENCRYPT_TEST=true
             - FRONT_HOST=https://benwa.online
             - VIRTUAL_HOST=benwa.online
             - LETSENCRYPT_HOST=benwa.online
