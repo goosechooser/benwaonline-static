@@ -21,10 +21,24 @@ function toggleMenu(menuElement) {
     });
 
     $(document).on('click', outsideMenuListener)
-
 }
+
 
 // event handlers
 $('[data-hook="nav-menu-toggle"]').click(function() {
     toggleMenu($('[data-hook="nav-menu-content"]'));
+});
+
+
+$('[data-hook="gpdr-accept"]').click(function() {
+    document.querySelector('.cookies_wrapper').classList.remove('cookies_wrapper--active');
+    document.getElementById('GDPR_Modal').classList.remove('is-open');
+});
+
+$('[data-hook="gdpr-manage"]').click(function() {
+    document.getElementById('GDPR_Modal').classList.add('is-open');
+});
+
+$('[data-hook="gdpr-cancel"]').click(function() {
+    document.getElementById('GDPR_Modal').classList.remove('is-open');
 });

@@ -19,6 +19,12 @@
     justify-content: flex-end;
 }
 
+#dod {
+    z-index: 1;
+    // position: relative;
+    // transform: scale(.4);
+}
+
 .frontbox {
     @include flex-col;
     @include container-fluid;
@@ -38,3 +44,4 @@
         margin-bottom: 5px;
     }
 }
+

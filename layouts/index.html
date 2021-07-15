@@ -1,23 +1,24 @@
-<!-- this is just the homepage -->
 <!DOCTYPE html>
 <html>
-{{/*  style sheet  */}}
 {{- partial "head.html" . -}}
-
-
 <style>  
-    .front {
-        background-image:url({{ (resources.GetMatch "front.jpg").RelPermalink }});
-    }
-    </style>  
-
+.front {background-image:url({{ (resources.GetMatch "eyes2.jpg").RelPermalink }});}
+</style>  
 
 <body>
-    <section id="content" class="front">
-            <div id="main" >
-                {{- partial "frontboxes.html" . -}}
-                </div>
-    </section>
-    
+<section id="content" class="front">
+    <div id="main" >
+        {{- partial "frontboxes.html" . -}}
+    </div>
+</section>
+
+{{/*  Pop up bullshit here  */}}
+{{ partial "cookies/display.html" . }}
+{{ partial "cookies/manage.html" . }}
+
+{{ $jquery := resources.Get "jquery.min.js" }}
+<script src="{{ $jquery.Permalink }}"></script>
+{{ $js := resources.Get "scripts.js" }}
+<script src="{{ $js.Permalink }}"></script>
 </body>
 </html>

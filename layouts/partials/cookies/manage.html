@@ -1,0 +1,204 @@
+{{/*  default is .micromodal-slide
+    then when we pop open we grab element by id GDPR_Modal and add a class   */}}
+
+<div class="reusable-gdpr__modal modal micromodal-slide" id="GDPR_Modal" aria-hidden="false">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+        <div class="reusable-gdpr__modalpopup modal__container" role="dialog" aria-modal="true"
+            aria-labelledby="modal-1-title">
+            <div class="reusable-gdpr__wrapper">
+                <main class="reusable-gdpr__modalContent modal__content" id="modal-content">
+                    <div class="reusable-gdpr__popup">
+                        <div class="reusable-gdpr__accordions">
+                            <div id="accordion">
+                                <div class="reusable-gdpr-main">
+                                    <h3 class="reusable-gdpr-main__mainTitle gdpr__body gdpr__body--strong">Your Cookie
+                                        Settings</h3>
+                                    <div class="reusable-gdpr-main__maindesc gdpr__body">This section allows you to
+                                        manage the various cookies we use to personalize your experience on your
+                                        website. You may choose which cookies to allow and may change your settings at a
+                                        later time by visiting our&nbsp;<a
+                                            href="https://www.rtx.com/privacy">Privacy</a>&nbsp;page.</div>
+                                </div>
+                                <div class="reusable-gdbr-card">
+                                    <div class="reusable-gdbr-card__cardHeader">
+                                        <div class="reusable-gdbr-card__check">
+
+                                        </div>
+                                        <div class="reusable-gdbr-card__content">
+                                            <h3 class="reusable-gdbr-card__title gdpr__accordion--item" type="button"
+                                                data-toggle="collapse" data-target="#collapse-0" aria-expanded="true"
+                                                aria-controls="collapse-0">
+                                                Necessary Cookies
+                                                <i class="reusable-gdbr-card__icon">
+                                                    <input type="checkbox" class="gdpr__input--plus" id="gdprPlus-0">
+                                                    <label for="gdprPlus-0" class="gdpr__plus"></label>
+                                                </i>
+                                            </h3>
+                                            <div class="reusable-gdbr-card__description gdpr__accordion--text">
+                                                These cookies are necessary to ensure our site's core functionality, and
+                                                we cannot turn them off within the site. They are part of our default
+                                                settings. They include security, accessibility, page loading, and
+                                                overall responsiveness and network management. While you may disable
+                                                these by changing your browser's settings, your changes might affect how
+                                                the site functions. To learn how to change your browser settings,
+                                                click&nbsp;<a href="https://www.rtx.com/privacy">here</a>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reusable-gdbr-card__cardContent collapse multi-collapse"
+                                        id="collapse-0">
+                                        <table
+                                            class="reusable-gdbr-card__table table-bordered table-striped table-condensed cf">
+                                            <thead class="cf reusable-gdbr-card__thead">
+                                                <tr class="reusable-gdbr-card__tableRow">
+                                                    <th
+                                                        class="reusable-gdbr-card__tcol reusable-gdbr-card__tcol1 gdpr__table--descriptor">
+                                                        Type</th>
+                                                    <th
+                                                        class="reusable-gdbr-card__tcol reusable-gdbr-card__tcol2 gdpr__table--descriptor">
+                                                        Provider</th>
+                                                    <th
+                                                        class="reusable-gdbr-card__tcol reusable-gdbr-card__tcol3 gdpr__table--descriptor">
+                                                        Name</th>
+                                                    <th
+                                                        class="reusable-gdbr-card__tcol reusable-gdbr-card__tcol4 gdpr__table--descriptor">
+                                                        Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party
+                                                            Analytics/Personalization</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>SC_ANALYTICS_GLOBAL_COOKIE</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>Recognizes website visitors
+                                                            (anonymously-no personal information is collected on the
+                                                            user)</span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Visitor Preference</span>
+                                                    </td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>privacy-notification</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>Indicates whether privacy banner
+                                                            should be kept open or closed</span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>ASP.NET_SessionId</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper"> Maintain a secure session between
+                                                                device and server during a visit </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>sxa_site</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper"> Used by Sitecore to identify SXA
+                                                                site origin </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Visitor Preference</span>
+                                                    </td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>rtx#lang</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper"> Used by Sitecore to store the
+                                                                language preference for the user </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Azure)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>x-ms-routing-name</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper"> Generated by Azure Cloud </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Azure)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>TiPMix</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper">
+                                                                <div id="ContentWrapper"> Generated by Azure Cloud
+                                                                </div>
+                                                            </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Cloudflare)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>__cfduid</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>
+                                                            <div id="ContentWrapper"> The _cfduid cookie helps
+                                                                Cloudflare detect malicious visitors to our websites and
+                                                                minimizes blocking legitimate users </div>
+                                                        </span></td>
+                                                </tr>
+                                                <tr class="reusable-gdbr-card__ttr">
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Type"><span>First Party Technical</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Provider"><span>RTX.com (Sitecore)</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Name"><span>GDPR Consent</span></td>
+                                                    <td class="reusable-gdbr-card__ttd gdpr__table--text"
+                                                        data-title="Description"><span>The GDPR Consent cookie contains
+                                                            the names of cookies a site user currently opting in</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reusable-gdpr__footer">
+                            <div class="reusable-gdpr__buttons">
+                                <button class="gdpr__btn gdpr__btn--cancel" data-hook="gdpr-cancel">Cancel</button>
+                                <button class="gdpr__btn gdpr__btn--save" data-hook='gpdr-accept'>Save and Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>

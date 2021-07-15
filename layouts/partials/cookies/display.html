@@ -1,0 +1,27 @@
+<div class="component content cookies_wrapper cookies_wrapper--active">
+    <div class="component-content">
+        {{/*  this is the opaque bit  */}}
+        {{/*  would do display:none to hide this  */}}
+        <div class="gdpr__overlay"></div>
+        <div class="gdpr">
+            <div class="gdpr__message field-nonusdescriptiontext">Our website uses cookies and other tools to improve
+                the visitor experience. You can read more about these cookies and tools by clicking on the gray button.
+                To visit our site, click on a button to choose your settings.</div>
+            {{/*  Accept  */}}
+                <div class="gdpr__buttons">
+                    {{/*  if gdpr__btn--accept is clicked do one thing  */}}
+                    <a class="gdpr__btn gdpr__btn--accept  recommended_cookies  margin-r margin-b field-nonusrecommendedbuttontext" data-hook='gpdr-accept'>
+                        Accept recommended settings</a>
+                <a class="gdpr__btn gdpr__btn--accept necessary_cookies  margin-r margin-b field-nonusnecessarybuttontext" data-hook='gpdr-accept'
+                    >Accept necessary cookies only</a>
+                    {{/*  Manage settings  */}}
+                    {{/*  So basically you click this link and it pulls the content from the overlay page   */}}
+                <div class="gdpr__btn gdpr__btn--manage field-nonusmanagesettingsbuttontext" data-hook="gdpr-manage">
+                    {{$overlay := .Site.GetPage "/gpdr/gpdr-overlay"}}
+                    <a class="initializeModal" data-hook="gpdr-manage">Manage settings</a>
+                    </div>
+            </div>
+            <div class="gdpr__link gdpr__link--light  field-nonusfooterlink"><a href="https://www.rtx.com/privacy">RTX.com Privacy Policy</a></div>
+        </div>
+    </div>
+</div>
