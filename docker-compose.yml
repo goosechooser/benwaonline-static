@@ -51,7 +51,7 @@ services:
         container_name: benwaonline-build
         volumes:
             - ".:/src"
-            - html:/src/public
+            - content:/src/public
     
     benwaonline-host:
             image: nginx:alpine
@@ -63,7 +63,7 @@ services:
             volumes:
                 # - conf:/etc/nginx/conf.d
                 # - vhost:/etc/nginx/vhost.d
-                - html:/usr/share/nginx/html
+                - content:/usr/share/nginx/html
                 # - ./nginx/logs:/var/log/nginx
                 # - certs:/etc/nginx/certs
             environment:
@@ -77,6 +77,7 @@ volumes:
     conf:
     vhost:
     html:
+    content:
 
 networks:
     default:
