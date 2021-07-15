@@ -1,4 +1,6 @@
-baseURL = "https://romantic-hodgkin-e6944c.netlify.app/"
+# baseURL = "https://romantic-hodgkin-e6944c.netlify.app/"
+baseURL = "https://benwa.online/"
+
 languageCode = "en-us"
 title = "Benwa Online"
 
