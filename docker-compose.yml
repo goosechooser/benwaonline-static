@@ -16,11 +16,11 @@ services:
             - html:/usr/share/nginx/html
             - ./nginx/logs:/var/log/nginx
             - certs:/etc/nginx/certs
-        # environment:
-        #     - LETSENCRYPT_TEST=true
-        #     - FRONT_HOST=https://benwa.online
-        #     - VIRTUAL_HOST=benwa.online
-        #     - LETSENCRYPT_HOST=benwa.online
+        environment:
+            - LETSENCRYPT_TEST=true
+            - FRONT_HOST=https://benwa.online
+            - VIRTUAL_HOST=benwa.online
+            - LETSENCRYPT_HOST=benwa.online
 
     nginx-gen:
         image: nginxproxy/docker-gen
@@ -35,46 +35,28 @@ services:
             - ./nginx/logs:/var/log/nginx
             - certs:/etc/nginx/certs:ro
             - /tmp/templates:/etc/docker-gen/templates
-        # labels:
-        #     com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen: "true"
+        labels:
+            com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen: "true"
     
-    # nginx-ssl:
-    #     image: nginxproxy/acme-companion
-    #     container_name: nginx-ssl
-    #     volumes:
-    #         - /var/run/docker.sock:/var/run/docker.sock:ro
-    #         - conf:/etc/nginx/conf.d
-    #         - vhost:/etc/nginx/vhost.d
-    #         - html:/usr/share/nginx/html
-    #         - ./nginx/logs:/var/log/nginx
-    #         - certs:/etc/nginx/certs:rw
-    #         - acme:/etc/acme.sh
-    #     environment:
-    #         - DEBUG=1
-    #         - "NGINX_PROXY_CONTAINER=nginx"
-    #         - "NGINX_DOCKER_GEN_CONTAINER=nginx-gen"
+    nginx-ssl:
+        image: nginxproxy/acme-companion
+        container_name: nginx-ssl
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - conf:/etc/nginx/conf.d
+            - vhost:/etc/nginx/vhost.d
+            - html:/usr/share/nginx/html
+            - ./nginx/logs:/var/log/nginx
+            - certs:/etc/nginx/certs:rw
+            - acme:/etc/acme.sh
+        environment:
+            - DEBUG=1
+            - "NGINX_PROXY_CONTAINER=nginx"
+            - "NGINX_DOCKER_GEN_CONTAINER=nginx-gen"
 
-    # nginx-ssl:
-    #     image: jrcs/letsencrypt-nginx-proxy-companion:stable
-    #     container_name: nginx-ssl
-        # volumes:
-        #     - /var/run/docker.sock:/var/run/docker.sock:ro
-        #     - ./nginx/conf.d:/etc/nginx/conf.d
-        #     - ./nginx/vhost.d:/etc/nginx/vhost.d
-        #     - ./nginx/html:/usr/share/nginx/html
-        #     - ./nginx/logs:/var/log/nginx
-        #     - certs:/etc/nginx/certs:rw
-    #     restart: always
-        # environment:
-        #     - "NGINX_PROXY_CONTAINER=nginx"
-        #     - "NGINX_DOCKER_GEN_CONTAINER=nginx-gen"
 
     benwaonline:
-        # depends_on:
-        #     - nginx-ssl
-        # image will change to something else
         image: klakegg/hugo:0.83.1-ext-alpine
-        # entrypoint: hugo-official
         container_name: benwaonline
         # environment:
         #     - FRONT_HOST=https://benwa.online
@@ -86,7 +68,8 @@ services:
         #     - "1313"
         volumes:
             - ".:/src"
-            - ./benwaonline/static:/src/public
+            # - ./benwaonline/static:/src/public
+            - html:/target
 
 volumes:
     certs:
