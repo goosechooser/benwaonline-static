@@ -57,9 +57,9 @@ services:
             image: nginx:alpine
             container_name: benwaonline-host
             restart: unless-stopped
-            expose:
-                - "80"
-                - "443"
+            # expose:
+            #     - "80"
+            #     - "443"
             volumes:
                 # - conf:/etc/nginx/conf.d
                 # - vhost:/etc/nginx/vhost.d
@@ -67,7 +67,6 @@ services:
                 # - ./nginx/logs:/var/log/nginx
                 # - certs:/etc/nginx/certs
             environment:
-                - FRONT_HOST=https://benwa.online
                 - VIRTUAL_HOST=benwa.online
                 - LETSENCRYPT_HOST=benwa.online
 
