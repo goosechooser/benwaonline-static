@@ -1,6 +1,6 @@
 [
     {
-        "num_posts": 96,
+        "num_posts": 97,
         "id": 1,
         "name": "benwa",
         "created_on": "18-Jan-2018"
@@ -790,5 +790,17 @@
         "id": 140,
         "name": "is the killer",
         "created_on": "27-Sep-2020"
+    },
+    {
+        "created_on": "20-Jan-2022",
+        "name": "spelunky",
+        "num_posts": 1,
+        "id": 141
+    },
+    {
+        "created_on": "20-Jan-2022",
+        "name": "hamster",
+        "num_posts": 1,
+        "id": 142
     }
 ]
